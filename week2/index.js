@@ -84,3 +84,33 @@ console.log(challenge.repeat(2));
 
 //----- LEVEL 2  ---------------------------------------
 
+// 1. Using console.log() print out the following statement:
+console.log("The quote \'There is no exercise better for the heart than reaching down and lifting people up.\' by John Holmes teaches us to help one another.");
+
+// 2. Using console.log() print out the following quote by Mother Teresa:
+let motherTeresa = "Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don\'t just give money but reach out your hand instead."
+console.log(motherTeresa);
+
+// 3. Check if typeof '10' is exactly equal to 10. If not make it exactly equal.
+console.log(typeof '10' === 10 );
+let numTen = parseInt('10');
+console.log(numTen === 10);
+
+// 4. Check if parseFloat('9.8') is equal to 10 if not make it exactly equal with 10.
+console.log(parseFloat('9.8') === 10);
+let numApprox = Math.round(parseFloat("9.8"));
+console.log(numApprox === 10);
+
+// 5. Check if 'on' is found in both python and jargon
+console.log("python".includes('on'));
+console.log(`jargon`.includes(`on`));
+
+// 6. I hope this course is not full of jargon. Check if jargon is in the sentence.
+console.log('I hope this course is not full of jargon'.match('jargon'));
+
+// 7. Generate a random number between 0 and 100 inclusively.
+console.log(Math.floor(Math.random() * 101)); //0 - 100
+
+// 8. 
+
+
