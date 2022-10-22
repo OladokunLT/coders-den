@@ -54,4 +54,37 @@ console.log( 4 === '4') // false
 //Find the length of python and jargon and make a falsy comparison statement.
 console.log('python'.length != 'jargon'.length); // false
 
+/* 6.
+Figure out the result of the following comparison expression 
+first without using console.log(). 
+After you decide the result confirm it using console.log()
+*/
+console.log(4 > 3 && 10 < 12); // true
+console.log(4 > 3 && 10 > 12); // false
+console.log(4 > 3 || 10 < 12); // true
+console.log(4 > 3 || 10 > 12); // true
+console.log(!(4 > 3)); // false
+console.log(!(4 < 3)); // true
+console.log(!(false)); // true
+console.log(!(4 > 3 && 10 < 12)); //false
+console.log(!(4 > 3 && 10 > 12)); //true
+console.log(!(4 === '4')); // true
+    //There is no 'on' in both dragon and python
+console.log(!("dragon".includes('on') && "python".includes('on'))) // false
 
+// 7. Use the Date object to do the following activities
+const now = new Date();
+    //What is the year today?
+console.log(now.getFullYear());
+    //What is the month today as a number?
+console.log(now.getMonth()); //
+    //What is the date today?
+console.log(now.getDate()); // 
+    //What is the day today as a number?
+console.log(now.getDay()); // 
+    //What is the hours now?
+console.log(now.getHours()); //
+    //What is the minutes now?
+console.log(now.getMinutes())
+    //Find out the numbers of seconds elapsed from January 1, 1970 to now.
+console.log(now.getTime());
