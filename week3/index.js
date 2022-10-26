@@ -163,12 +163,12 @@ switch (x**2 + 6*x + 9) {
 }
 
 // 9. Writ a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
-/*
+/*      //copy code to run on browser 👇👇
     let hours = Number(prompt('Enter hours: '));
     let ratePerHour = Number(prompt('Enter rate per hour: '));
     let weeklyEarning = hours * ratePerHour;
     console.log(weeklyEarning);
-*/
+*/      // stop here 👆👆
 
 // 10. If the length of your name is greater than 7 say, your name is long else say your name is short.;
 firstName.length > 7 ? console.log('Your name is long'): console.log('Your name is short');
@@ -183,13 +183,43 @@ let yourAge = 25;
 console.log(`I am ${myAge-yourAge} older than you`);
 
 // 13. Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
-/**
+/**     //copy code to run on browser 👇👇
     let drivingAge = +prompt(`Enter birth year: 1995`)
     if (drivingAge) {
         console.log(`You are ${age}. You are old enough to drive`);
     } else {
         console.log(`You are ${age}. You will be allowed to drive after ${age-18} years.`)
     }
- */
+ */     // stop here 👆👆
 
-// 14. 
+// 14. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+/*
+    let yearNo = +prompt('Enter number of years ');
+    totalSecondsLived = 60 * 60 * 24 * yearNo;
+    console.log (`You lived ${totalSecondsLived} seconds`)
+*/
+
+// 15. Create a human readable time format using the Date time object
+    let years = now.getFullYear();
+    let months = now.getMonth() + 1;
+    let days = now.getDate();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    // i. YYYY-MM-DD HH:mm
+    console.log (`${years}-${months}-${days} ${hours}:${minutes}`);
+    // ii.   DD-MM-YYYY HH:mm
+    console.log (`${days}-${months}-${years} ${hours}:${minutes}`);
+    // iii.  DD/MM/YYYY HH:mm
+    console.log (`${days}/${months}/${years} ${hours}:${minutes}`);
+
+///// ---------- Level 3 ----------------
+
+// 1. Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05)
+    let monthsTo2sf = months <= 9 ? "0" + months : months;
+    let daysTo2sf = days <= 9 ? "0" + days : days;
+    let hoursTo2sf = hours <= 9 ? "0" + hours : hours;
+    let minutesTo2sf = minutes <= 9 ? "0" + minutes : minutes;
+    // i. YYY-MM-DD HH:mm eg. 2012-01-02 07:05
+    let currentTime = `${years}-${monthsTo2sf}-${daysTo2sf} ${hoursTo2sf}:${minutesTo2sf}`
+    console.log (currentTime);
