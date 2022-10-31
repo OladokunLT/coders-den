@@ -82,8 +82,8 @@ If the user input is :
     * March, April or May, the season is Spring
     * June, July or August, the season is Summer
 */
-let monthInput = 'August';
-switch (monthInput.toLowerCase()) {
+let monthInputs = 'August';
+switch (monthInputs.toLowerCase()) {
     case 'september':
     case 'october':
     case 'November':
@@ -115,9 +115,9 @@ switch (monthInput.toLowerCase()) {
 
 // 3. Check if a day is weekend day or a working day. Your script will take day as an input.
 let dayInput = 'monDAY';
-dayInput = dayInput.toLocaleLowerCase();
-let FirstLetterToUppercase = dayInput.charAt(0).toUpperCase();
-let day = FirstLetterToUppercase.concat(dayInput.slice(1));
+dayInput = dayInput.toLowerCase();
+let FirstCharToUppercase = dayInput.charAt(0).toUpperCase();
+let day = FirstCharToUppercase.concat(dayInput.slice(1));
 console.log(day);
 switch (day) {
     case 'Monday':
@@ -137,4 +137,71 @@ switch (day) {
         break;
 }
 
-// 
+// LEVEL 3 ------------------------///
+// 1. Write a program which tells the number of days in a month.
+let monthInput = 'january';
+monthInput = monthInput.toLowerCase();
+let FirstLetterToUppercase = monthInput.charAt(0).toUpperCase();
+let monthName = FirstLetterToUppercase.concat(monthInput.slice(1));
+console.log(monthName);
+switch (monthName) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+        console.log(`${monthName} has 31 days.`);        
+        break;
+
+    case 'September':
+    case 'April':
+    case 'June':
+    case 'November':
+        console.log(`${monthName} has 30 days.`)
+        break
+    
+    case 'February':
+        console.log(`${monthName} has 28 days.`)
+        break
+
+    default:
+        console.log(`Incorrect input! Enter name of Month in full and correctly`);
+        break;
+}
+
+// 2. Write a program which tells the number of days in a month, now consider leap year.
+// considering leap year
+
+let userMonthInput = 'February';
+userMonthInput = userMonthInput.toLowerCase();
+let festCharToUppercase = userMonthInput.charAt(0).toUpperCase();
+let nameOfMonth = festCharToUppercase.concat(userMonthInput.slice(1));
+console.log(nameOfMonth);
+switch (nameOfMonth) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+        console.log(`${nameOfMonth} has 31 days.`);        
+        break;
+
+    case 'September':
+    case 'April':
+    case 'June':
+    case 'November':
+        console.log(`${nameOfMonth} has 30 days.`)
+        break
+    
+    case 'February':
+        console.log(`${nameOfMonth} has 29 days.`)
+        break
+
+    default:
+        console.log(`Incorrect input! Enter name of Month in full and correctly`);
+        break;
+}
