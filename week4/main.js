@@ -39,4 +39,102 @@ if (number % 2 == 0) {
     console.log(`${number} is an odd number.`)
 }
 
+// LEVEL 2 --------------------------------///
+/*
+1. Write a code which can give grades to students according to theirs scores:
+     80-100, A
+     70-89, B
+     60-69, C
+     50-59, D
+     0-49, F
+*/
+let grade;
+let mark = 43;
+if (mark >= 0 && mark <=49) {
+    grade = "F";
+    console.log(grade);
+}
+else if(mark <=59) {
+    grade = "D";
+    console.log(grade);
+}
+else if(mark <=69) {
+    grade = "C";
+    console.log(grade);
+}
+else if(mark <=79) {
+    grade = "B";
+    console.log(grade);
+}
+else if(mark <=100) {
+    grade = "A";
+    console.log(grade);
+} 
+else {
+console.log (`Enter number between 0 and 100`)
+}
 
+/*
+2. Check if the season is Autumn, Winter, Spring or Summer. 
+If the user input is :
+    * September, October or November, the season is Autumn.
+    * December, January or February, the season is Winter.
+    * March, April or May, the season is Spring
+    * June, July or August, the season is Summer
+*/
+let monthInput = 'August';
+switch (monthInput.toLowerCase()) {
+    case 'september':
+    case 'october':
+    case 'November':
+        console.log('Autumn')
+        break
+
+    case 'december':
+    case 'january':
+    case 'february':
+        console.log('Winter')
+        break;
+
+    case 'march':
+    case 'april':
+    case 'may':
+        console.log('Spring')
+        break;
+
+    case 'june':
+    case 'july':
+    case 'august':
+        console.log('Summer')
+        break;
+
+    default:
+        console.log('Incorrect input')
+        break;
+}
+
+// 3. Check if a day is weekend day or a working day. Your script will take day as an input.
+let dayInput = 'monDAY';
+dayInput = dayInput.toLocaleLowerCase();
+let FirstLetterToUppercase = dayInput.charAt(0).toUpperCase();
+let day = FirstLetterToUppercase.concat(dayInput.slice(1));
+console.log(day);
+switch (day) {
+    case 'Monday':
+    case 'Tuesday':
+    case 'Wednesday':
+    case 'Thursday':
+    case 'Friday':
+        console.log(`${day} is a working day.`);        
+        break;
+
+    case 'Saturday':
+    case 'Sunday':
+        console.log(`${day} is a weekend.`)
+        break
+    default:
+        console.log(`Incorrect input! Enter name of day in full and correctly`);       
+        break;
+}
+
+// 
