@@ -121,7 +121,8 @@ console.log(Math.floor(Math.random() * (225 - 0 + 1)) + 0)
 
 // 10. Access the 'JavaScript' string characters using a random number.
 let str = 'javaScript';
-console.log(str.charAt(Math.floor(Math.random() * str.length)))
+let randomChar = str.charAt(Math.floor(Math.random() * str.length))
+console.log(randomChar)
 
 // 11. Use console.log() and escape characters to print the following pattern.
 console.log(
