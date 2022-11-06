@@ -143,23 +143,25 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
      * Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
      */
 
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
-copyOfAges = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
-copyOfAges.sort()
-let minAge = copyOfAges[0];
-let maxAge = copyOfAges[copyOfAges.length - 1]
+    // const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
+    // copyOfAges = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
 
-// I need help to find the average by formula
+    // copyOfAges.sort()
+    // let minAge = copyOfAges[0];
+    // let maxAge = copyOfAges[copyOfAges.length - 1]
 
-// To find the average(mean) age 👇
-let sum = 0
-for (let num of ages) {
-    sum+=num
-}
-let aveAge =  Math.floor((sum/ages.length))
-console.log(aveAge);
-let rangeOfAges = maxAge - minAge;
+    // // I need help to find the average by formula
 
-console.log(Math.abs(( minAge - aveAge))  == (maxAge - aveAge))
-console.log(copyOfAges);
+    // // To find the average(mean) age 👇
+    // let sum = 0
+    // for (let num of ages) {
+    //     sum+=num
+    // }
+    // let aveAge =  Math.floor((sum/ages.length))
+    // console.log(aveAge);
+
+    // let rangeOfAges = maxAge - minAge;
+
+    // console.log(Math.abs(( minAge - aveAge))  == (maxAge - aveAge))
+
 
