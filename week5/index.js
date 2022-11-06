@@ -143,16 +143,34 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
      * Compare the value of (min - average) and (max - average), use abs() method 1.Slice the first ten countries from the countries array
      */
 
-    // const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
-    // copyOfAges = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]; 
+    const copyOfAges = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24, ]; 
 
     // copyOfAges.sort()
     // let minAge = copyOfAges[0];
     // let maxAge = copyOfAges[copyOfAges.length - 1]
 
-    // // I need help to find the average by formula
+// 2.  // I need help to find the average by formula
+    // copyOfAges.sort()
+    // console.log(copyOfAges);
 
-    // // To find the average(mean) age 👇
+    // let middleItems; 
+    // if ( copyOfAges.length %  2=== 0){
+    //     console.log(copyOfAges.slice(copyOfAges.length/2-1, copyOfAges.length/2 +1));
+    //     middleItems = copyOfAges.slice(copyOfAges.length/2-1, copyOfAges.length/2 +1)
+    // } else if(copyOfAges.length % 2 !== 0){
+    //     console.log(copyOfAges.slice(copyOfAges.length/2, copyOfAges.length/2+1 ));
+    //     middleItems = copyOfAges.slice(copyOfAges.length/2, copyOfAges.length/2+1)
+    // }
+    // if (middleItems.length === 1){
+    //     console.log(middleItems[0])
+    // } else {
+    //     let medianAge = (middleItems.reduce((acc, cv)=> (acc + cv), 0))/2
+    //     console.log(medianAge);
+    // }
+
+
+// 3. // To find the average(mean) age 👇
     // let sum = 0
     // for (let num of ages) {
     //     sum+=num
