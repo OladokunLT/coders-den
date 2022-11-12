@@ -567,3 +567,11 @@ const countries = [
         // }
         // console.log(countryHas4Char);
 
+// 9. Reverse the countries array and capitalize each country and stored it as an array
+// let copyCountryArr = countries.slice(0);
+// copyCountryArr.reverse();
+// let arr = Array();
+// for (let i = 0; i < copyCountryArr.length; i++) {
+//         arr.push(copyCountryArr[i])
+// }
+// console.log(arr);
