@@ -113,7 +113,7 @@
     // console.log(findMax(0, 10, 5));
     // console.log(findMax(-15, -10, -12));
             // OR
-//this only work for positive intergers
+    //this only work for positive intergers
     // const findMax = (...args) => {
     //     let max = 0;
     //     for(let arg of args ){
@@ -124,3 +124,199 @@
     // console.log(findMax(0, 10, 5));
     // console.log(findMax(-15, -10, -12)); // incorrect answer bcos this function only works for positive integers
 
+
+
+//-----Exercise Level2-------------------------
+//---------------------------------------------------
+
+// 1. Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
+// I don't know how to solve this question
+
+// 2. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
+// const solveQuadEquation = () =>{
+
+// }
+
+// 3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+    // const printArray = (...array) => {
+    //     for (const arr of array) {
+    //         console.log(arr);
+    //     }
+    // }
+    // console.log(printArray('My', 'name', 'is', 'Lukman'));
+
+// 4. Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object
+// function showDateTime() {
+//     let now = new Date()
+//     let years = now.getFullYear();
+//     let months = now.getMonth() + 1;
+//     let days = now.getDate();
+//     let hours = now.getHours();
+//     let minutes = now.getMinutes();
+//     let monthsTo2sf = months <= 9 ? "0" + months : months;
+//     let daysTo2sf = days <= 9 ? "0" + days : days;
+//     let hoursTo2sf = hours <= 9 ? "0" + hours : hours;
+//     let minutesTo2sf = minutes <= 9 ? "0" + minutes : minutes;
+//     // i. DD/MM/YYYY HH:mm eg. 14/11/2022 21:45
+//     let currentTime = `${daysTo2sf}/${monthsTo2sf}/${years} ${hoursTo2sf}:${minutesTo2sf}`
+//     console.log (currentTime);
+// return currentTime
+// }
+// console.log(showDateTime()); // 14/11/2022 21:45
+
+// 5. Declare a function name swapValues. This function swaps value of x to y.
+/**
+    swapValues(3, 4) // x => 4, y=>3
+    swapValues(4, 5) // x = 5, y = 4
+ */
+    // const swapValues =  (function(x, y) {
+    //     let m= x; let n=y;
+    //     console.log(m, n);
+    // })(8,6);
+    
+// 6. Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use method).
+    // function reverseArray(array) {
+    //     let ans = [];
+    //     for (const arr of array) {
+    //         ans.unshift(arr);
+    //     }
+    //     return ans
+    // }
+    // console.log(reverseArray([1, 2, 3, 4, 5])); //[5, 4, 3, 2, 1]
+    // console.log(reverseArray(['A', 'B', 'C'])); //['C', 'B', 'A']
+
+// 7. Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+    // const capitalizeArray = (array) =>{
+    //     let capitalizedArray = Array();
+    //     for (const arr of array) {
+    //         capitalizedArray.push(arr.toUpperCase())
+    //     }
+    //     return capitalizedArray
+    // }
+    // console.log(capitalizeArray(['Lukman', 'Oladokun']));
+
+// 8. Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+    // const addItem = (array) => {
+    // array.push('Oladokun', 'Tunde')
+    // return array
+    // }
+    // console.log(addItem(['Lukman']));
+
+// 9. Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+    // const removeItem = (index) => {
+    // let items = ['Lukman', 'Oladokun', 'Tunde'];
+    // items.splice(index, 1)
+    // return items
+    // }
+    // console.log(removeItem(2)); 
+
+// 10. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+    // function sumOfOdds (num){
+    //     let sum = 0;
+    //     for (let i = 0; i < num; i++) {
+    //         sum += i
+    //     }
+    //     return sum
+    // }
+    // console.log(sumOfOdds(10));
+
+// 11. Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+    // function sumOfOdds (num){
+    //     let sum = 0;
+    //     for (let i = 1; i < num; i+=2) {
+    //         sum += i
+    //     }
+    //     return sum
+    // }
+    // console.log(sumOfOdds(10));
+
+// 12. Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+    // function sumOfEven (num){
+    //     let sum = 0;
+    //     for (let i = 0; i < num; i+=2) {
+    //         sum += i
+    //     }
+    //     return sum
+    // }
+    // console.log(sumOfEven(10));
+
+// 13. Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+    // const evensAndOdds = (num) => {
+    // let even = [], odd=[];
+    //     for(i=0; i<=num; i++){
+    //         (i % 2 === 0) ? even.push(i) : odd.push(i)
+    //     }
+    //     return `
+    //     The number of odds are ${odd.length}
+    //     The number of evens are ${even.length}`
+    // }
+    // console.log(evensAndOdds(100));
+
+// 14. Write a function which takes any number of arguments and return the sum of the arguments
+    // const sum = (...args) => {
+    //     let sum = 0;
+    //     for(const elements of args){
+    //         sum += elements;
+    //         }
+    //         return sum
+    //     }
+    // console.log(sum(2,3,4))
+
+// 15. Writ a function which generates a randomUserIp.
+    // const randomUserIp = (() => {
+    //     let ip = [];
+    //     let i=0;
+    //     while (i<4) {
+    //        ip.push(Math.floor(Math.random()*256))       
+    //         i++
+    //     }
+    //     ip = ip.join(".")
+    //     return ip;
+    // })()
+    // console.log(randomUserIp); //154.35.222.56
+
+
+// 16. Write a function which generates a randomMacAddress
+    // const randomMacAddressUnit = (() => {
+    //     let hexaChar = '0123456789ABCDEFabcdef'.split("")
+    //     let twoChar = [];
+    //     for (let i = 0; i < 2; i++) {
+    //         twoChar.push(hexaChar[Math.floor(Math.random()*hexaChar.length)])
+    //     }
+    //     return twoChar.join("")
+    // })
+    // function randomMacAddress () {
+    //     macAddress = []
+    //     for(i=0; i<6; i++){
+    //         macAddress.push(randomMacAddressUnit())
+    //     }
+    //     macAddress = macAddress.join(':');
+    //     return macAddress;
+    // }
+    // console.log(randomMacAddress()) // 8c:6D:26:88:0E:Bf
+
+// 17. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+    // const randomHexaNumberGenerator = () => {
+    //     let array = '0123456789abcdef'.split("")
+    //     let hexaNumber = [];
+    //     for(i=0; i<6; i++) {
+    //        hexaNumber.push(array[Math.floor(Math.random()*array.length)]);
+    //     }    
+    //     hexaNumber= hexaNumber.join("");
+    //     hexaNumber = `#${hexaNumber}`;
+    //     return hexaNumber;
+    // }
+    // console.log(randomHexaNumberGenerator());
+
+
+//18. Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+    // const userIdGenerator = () => {
+    //     let array = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("")
+    //     let userId = [];
+    //     for(i=0; i<10; i++) {
+    //        userId.push(array[Math.floor(Math.random()*array.length)]);
+    //     }    
+    //     userId= userId.join("");
+    //     return userId;
+    // }
+    // console.log(userIdGenerator()); // generates random userId - 10 characters e.g S0ulDvBvE4
