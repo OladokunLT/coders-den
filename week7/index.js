@@ -277,23 +277,25 @@
 
 
 // 16. Write a function which generates a randomMacAddress
-    // const randomMacAddressUnit = (() => {
-    //     let hexaChar = '0123456789ABCDEFabcdef'.split("")
-    //     let twoChar = [];
-    //     for (let i = 0; i < 2; i++) {
-    //         twoChar.push(hexaChar[Math.floor(Math.random()*hexaChar.length)])
-    //     }
-    //     return twoChar.join("")
-    // })
-    // function randomMacAddress () {
-    //     macAddress = []
-    //     for(i=0; i<6; i++){
-    //         macAddress.push(randomMacAddressUnit())
-    //     }
-    //     macAddress = macAddress.join(':');
-    //     return macAddress;
-    // }
-    // console.log(randomMacAddress()) // 8c:6D:26:88:0E:Bf
+/**
+    const randomMacAddressUnit = (() => {
+        let hexaChar = '0123456789ABCDEFabcdef'.split("")
+        let twoChar = [];
+        for (let i = 0; i < 2; i++) {
+            twoChar.push(hexaChar[Math.floor(Math.random()*hexaChar.length)])
+        }
+        return twoChar.join("")
+    })
+    function randomMacAddress () {
+        macAddress = []
+        for(i=0; i<6; i++){
+            macAddress.push(randomMacAddressUnit())
+        }
+        macAddress = macAddress.join(':');
+        return macAddress;
+    }
+    console.log(randomMacAddress()) // 8c:6D:26:88:0E:Bf
+ */
 
 // 17. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
     // const randomHexaNumberGenerator = () => {
@@ -320,3 +322,51 @@
     //     return userId;
     // }
     // console.log(userIdGenerator()); // generates random userId - 10 characters e.g S0ulDvBvE4
+
+// ------------------- LExercises: Level 3 --------------------------------------
+//-------------------------------------------------------------------------------
+// 1. Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+
+/**
+ userIdGeneratedByUser()
+'kcsy2
+SMFYb
+bWmeq
+ZXOYh
+2Rgxf
+'
+userIdGeneratedByUser()
+'1GCSgPLMaBAVQZ26
+YD7eFwNQKNs7qXaT
+ycArC5yrRupyG00S
+UbGxOFI7UXSWAyKN
+dIV0SSUTgAdKwStr
+'
+ */
+
+// Solution Below ------
+/**
+    let idLength = Number(prompt("Enter id length  in figure "));
+    let idTime = Number(prompt("Enter id times in figure "));
+    const userIdGenerator = () => {
+        let array = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("")
+        let userId = [];
+        for(i=0; i<idLength; i++) {
+            userId.push(array[Math.floor(Math.random()*array.length)]);
+        }    
+        userId= userId.join("");
+        return userId;
+    }
+    const timeN = () => {
+        let idTimes = [];
+        for (let index = 0; index < idTime; index++) {
+        idTimes.push(userIdGenerator());
+        }
+        idTimes = idTimes.join(" ");
+        return idTimes;
+    }
+    console.log(timeN());
+ */
+
+// 2. 
+
