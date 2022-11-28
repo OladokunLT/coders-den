@@ -368,5 +368,55 @@ dIV0SSUTgAdKwStr
     console.log(timeN());
  */
 
-// 2. 
+// 2. Write a function name rgbColorGenerator and it generates rgb colors.
+    // function rgbColorGenerator () {
+    //     let rgbColorNum = Array();
+    //     for(let i=0; i<3; i++){
+    //         rgbColorNum.push(Math.floor(Math.random()*256));
+    //     }
+    //     console.log(rgbColorNum);
+    //     rgbColorNum = `rgb(${rgbColorNum.toString()})`;
+    //     return (rgbColorNum);
+    // }
+    // console.log(rgbColorGenerator());
 
+// 3. Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+    // function arrayOfHexaColors() {
+    //     let arrOfHexaColors = [];
+    //     for (let index = 0; index < Math.ceil(Math.random()*11); index++) {
+    //         arrOfHexaColors.push( //pushing a nested anonymous callback function
+    //             (() => { 
+    //                 const charArr = "0123456789abcdef".split("")
+    //                 let randomId = [];
+    //                 for (let i = 0; i < 6; i++){ 
+    //                     randomId.push(charArr[Math.floor(Math.random()* charArr.length)])   
+    //                 }
+    //                 return randomId = `#${randomId.join("")}`
+    //             })()
+    //         );
+    //     }
+    //     return arrOfHexaColors   
+    // }
+    // console.log(arrayOfHexaColors());
+
+// 4. Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+function arrayOfRgbColors() {
+        let arrOfRgbColors = [];
+        for (let index = 0; index < Math.ceil(Math.random()*11); index++) {
+            arrOfRgbColors.push( //pushing a nested anonymous callback function
+                (()=> {
+                    let rgbColorNum = Array();
+                    for(let i=0; i<3; i++){
+                        rgbColorNum.push(Math.floor(Math.random()*256));
+                    }
+                    console.log(rgbColorNum);
+                    rgbColorNum = `rgb(${rgbColorNum.toString()})`;
+                    return (rgbColorNum);
+                })()
+            );
+        }
+        return arrOfRgbColors   
+    }
+    console.log(arrayOfRgbColors());
+
+    
