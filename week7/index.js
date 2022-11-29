@@ -400,23 +400,49 @@ dIV0SSUTgAdKwStr
     // console.log(arrayOfHexaColors());
 
 // 4. Write a function arrayOfRgbColors which return any number of RGB colors in an array.
-function arrayOfRgbColors() {
-        let arrOfRgbColors = [];
-        for (let index = 0; index < Math.ceil(Math.random()*11); index++) {
-            arrOfRgbColors.push( //pushing a nested anonymous callback function
-                (()=> {
-                    let rgbColorNum = Array();
-                    for(let i=0; i<3; i++){
-                        rgbColorNum.push(Math.floor(Math.random()*256));
-                    }
-                    console.log(rgbColorNum);
-                    rgbColorNum = `rgb(${rgbColorNum.toString()})`;
-                    return (rgbColorNum);
-                })()
-            );
-        }
-        return arrOfRgbColors   
-    }
-    console.log(arrayOfRgbColors());
+    // function arrayOfRgbColors() {
+    //     let arrOfRgbColors = [];
+    //     for (let index = 0; index < Math.ceil(Math.random()*11); index++) {
+    //         arrOfRgbColors.push( //pushing a nested anonymous callback function
+    //             (()=> {
+    //                 let rgbColorNum = Array();
+    //                 for(let i=0; i<3; i++){
+    //                     rgbColorNum.push(Math.floor(Math.random()*256));
+    //                 }
+    //                 console.log(rgbColorNum);
+    //                 rgbColorNum = `rgb(${rgbColorNum.toString()})`;
+    //                 return (rgbColorNum);
+    //             })()
+    //         );
+    //     }
+    //     return arrOfRgbColors   
+    // }
+    // console.log(arrayOfRgbColors());
 
-    
+// 5. Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+function convertHexaToRgb(hexaColor) {
+    hexaColor = (hexaColor[0]==='#')?hexaColor.slice(1):hexaColor;
+    console.log(hexaColor);  //01e2ff
+    let getHexComponents, toRgb, rgb = [];
+    for (let index = 0; index < hexaColor.length; index+=2) {
+        getHexComponents = hexaColor.slice(index, index+2);  // "01", "e2", "ff"
+        toRgb = parseInt(getHexComponents, 16);
+        rgb.push(toRgb);
+    }
+    return (`rgb(${rgb.toString()})`)
+}
+console.log(convertHexaToRgb('#01e2ff'));  // rgb(1,226,255)
+
+
+// 6. Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+    function convertRgbToHex (rgb){
+        const hexColor = Array();
+        const rgbValArr = rgb.match(/\d+/g);
+        for(let i=0; i<rgbValArr.length; i++) {
+            hexValue = (+rgbValArr[i]).toString(16);
+            (hexValue.length === 1) && (hexValue = "0" + hexValue);
+            hexColor.push(hexValue) 
+        }
+        return ("#" + hexColor.join(""));
+    }
+    console.log( convertRgbToHex('(170, 40, 16)') ); 
