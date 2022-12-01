@@ -420,29 +420,176 @@ dIV0SSUTgAdKwStr
     // console.log(arrayOfRgbColors());
 
 // 5. Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
-function convertHexaToRgb(hexaColor) {
-    hexaColor = (hexaColor[0]==='#')?hexaColor.slice(1):hexaColor;
-    console.log(hexaColor);  //01e2ff
-    let getHexComponents, toRgb, rgb = [];
-    for (let index = 0; index < hexaColor.length; index+=2) {
-        getHexComponents = hexaColor.slice(index, index+2);  // "01", "e2", "ff"
-        toRgb = parseInt(getHexComponents, 16);
-        rgb.push(toRgb);
-    }
-    return (`rgb(${rgb.toString()})`)
-}
-console.log(convertHexaToRgb('#01e2ff'));  // rgb(1,226,255)
+    // function convertHexaToRgb(hexaColor) {
+    //     hexaColor = (hexaColor[0]==='#')?hexaColor.slice(1):hexaColor;
+    //     console.log(hexaColor);  //01e2ff
+    //     if(hexaColor.length<6){
+    //         return ("Hexacolor must be 6 characters");
+    //     } 
+    //     else {
+    //         let getHexComponents, toRgb, rgb = [];
+    //         for (let index = 0; index < hexaColor.length; index+=2) {
+    //             getHexComponents = hexaColor.slice(index, index+2);  // "01", "e2", "ff"
+    //             toRgb = parseInt(getHexComponents, 16);
+    //             rgb.push(toRgb);
+    //         }
+    //         return (`rgb(${rgb.toString()})`)
+    //     }
+    // }    
+    // console.log(convertHexaToRgb('#01e2ff'));  // rgb(1,226,255)
 
 
 // 6. Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
-    function convertRgbToHex (rgb){
-        const hexColor = Array();
-        const rgbValArr = rgb.match(/\d+/g);
-        for(let i=0; i<rgbValArr.length; i++) {
-            hexValue = (+rgbValArr[i]).toString(16);
-            (hexValue.length === 1) && (hexValue = "0" + hexValue);
-            hexColor.push(hexValue) 
-        }
-        return ("#" + hexColor.join(""));
-    }
-    console.log( convertRgbToHex('(170, 40, 16)') ); 
+//     function convertRgbToHex (rgb){
+//         const hexColor = Array();
+//         const rgbValArr = rgb.match(/\d+/g);
+//         for(let i=0; i<rgbValArr.length; i++) {
+//             hexValue = (+rgbValArr[i]).toString(16);
+//             (hexValue.length === 1) && (hexValue = "0" + hexValue);
+//             hexColor.push(hexValue) 
+//         }
+//         return ("#" + hexColor.join(""));
+//     }
+//     console.log( convertRgbToHex('(170, 40, 16)') ); 
+
+// 7. Write a function generateColors which can generate any number of hexa or rgb colors.
+    // function generateColors(hexaOrRgb, num =1){
+    //     if(hexaOrRgb === "hexa"){
+    //         return arrayOfHexaColors = (function() {
+    //             let arrOfHexaColors = [];
+    //             for (let index = 0; index < num; index++) {
+    //                 arrOfHexaColors.push( //pushing a nested anonymous callback function
+    //                     (() => { 
+    //                         const charArr = "0123456789abcdef".split("")
+    //                         let randomId = [];
+    //                         for (let i = 0; i < 6; i++){ 
+    //                             randomId.push(charArr[Math.floor(Math.random()* charArr.length)])   
+    //                         }
+    //                         return randomId = `#${randomId.join("")}`
+    //                     })()
+    //                 );
+    //             }
+    //             (arrOfHexaColors.length === 1) && (arrOfHexaColors=arrOfHexaColors.join(""));
+    //             return arrOfHexaColors   
+    //         })()
+    //     } else if(hexaOrRgb === "rgb"){    
+    //         return arrayOfRgbColors = (function() {
+    //             let arrOfRgbColors = [];
+    //             for (let index = 0; index < num; index++) {
+    //                 arrOfRgbColors.push( //pushing a nested anonymous callback function
+    //                     (()=> {
+    //                         let rgbColorNum = Array();
+    //                         for(let i=0; i<3; i++){
+    //                             rgbColorNum.push(Math.floor(Math.random()*256));
+    //                         }
+    //                         console.log(rgbColorNum);
+    //                         rgbColorNum = `rgb(${rgbColorNum.toString()})`;
+    //                         console.log(rgbColorNum);
+    //                         return (rgbColorNum);
+    //                     })()
+    //                 );
+    //             }
+    //             (arrOfRgbColors.length=== 1)&&(arrOfRgbColors=arrOfRgbColors.toString());
+    //             return arrOfRgbColors   
+    //         })()
+        
+    //     } else {
+    //         return ('Invalid request! Enter "hexa" or "rgb" and number in digit')
+    //     }
+    // }
+    // console.log(generateColors("hexa",  2));
+
+// 8. Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+    // function shuffleArray (array){
+    //     let arr = [];
+    //     for (let index = 0; index < array.length; index++) {
+    //         element = array[Math.floor(Math.random()* array.length)];
+    //         console.log(element);
+    //         while (arr.includes(element)){
+    //             element = array[Math.floor(Math.random()* array.length)];
+    //         }
+    //         arr.unshift(element);
+    //     }
+    //     return arr;
+    // }
+    // console.log(shuffleArray([1, 2, 3, 4, 5]));
+    // console.log(shuffleArray(['boy', 'man', 'lad','old', 'new']));
+
+// 9. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+    // function factorial(n){
+    //     if (n<=0){
+    //         return 1;
+    //     } else{
+    //         return (n * factorial(n-1)); 
+    //     } 
+    // }
+    // console.log(factorial(5));
+
+// 10. Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+
+// 11. Call your function sum, it takes any number of arguments and it returns the sum.
+    // function sum(){
+    //     let total=0;
+    //     for (let index = 0; index < arguments.length; index++) {
+    //         total += arguments[index];
+    //     }
+    //     return total;
+    // }
+    // console.log(sum(4,5,3));
+
+            //or
+    
+    // const sumAll = (...arg) => {
+    // let total = 0;
+    // for (let index = 0; index < arg.length; index++) {
+    //     total += arg[index];
+    // }
+    // return total;
+    // }
+    // console.log(sumAll(3,4,5));
+
+// 12.Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+    // function sumOfArrayItems(arrayOfItems) {
+    //     let sum = 0;
+    //     for (const item of arrayOfItems) {
+    //         if (typeof item !== 'number') {
+    //         return ("items must be number")
+    //         } else {
+    //             sum += item;
+    //         }
+    //     }
+    //     return sum;
+    // }
+    // console.log(sumOfArrayItems([1,"",2,3,5]));
+    // console.log(sumOfArrayItems([1,2,3,5]));
+
+// 13. Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+    // function average(arrayOfItems) {
+    //     let sum = 0;
+    //     for (const item of arrayOfItems) {
+    //         if (typeof item !== 'number') {
+    //         return ("items must be number")
+    //         } else {
+    //             sum += item;
+    //         }
+    //     }
+    //     return sum/arrayOfItems.length;
+    // }
+    // console.log(average([2,5,4,6,3]));
+
+// 14. Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+    // function modifyArray(arrayOfItems) {
+    //     if (arrayOfItems.length < 5){
+    //         return 'Not found'
+    //     }else{
+    //         let modifyArray = []
+    //         for (let index = 0; index < arrayOfItems.length; index++) {
+    //             modifyArray.push(arrayOfItems[index])
+    //         }
+    //         modifyArray= modifyArray.replace(modifyArray[4], modifyArray[4].toUpperCase() );
+    //          console.log(modifyArray);
+    //         return modifyArray;
+    //     }
+    // }
+    // console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']));
