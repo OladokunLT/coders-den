@@ -579,17 +579,16 @@ dIV0SSUTgAdKwStr
     // console.log(average([2,5,4,6,3]));
 
 // 14. Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
-    // function modifyArray(arrayOfItems) {
-    //     if (arrayOfItems.length < 5){
-    //         return 'Not found'
-    //     }else{
-    //         let modifyArray = []
-    //         for (let index = 0; index < arrayOfItems.length; index++) {
-    //             modifyArray.push(arrayOfItems[index])
-    //         }
-    //         modifyArray= modifyArray.replace(modifyArray[4], modifyArray[4].toUpperCase() );
-    //          console.log(modifyArray);
-    //         return modifyArray;
-    //     }
-    // }
-    // console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']));
+    function modifyArray(arrayOfItems) {
+        if (arrayOfItems.length < 5){   return 'Not found'
+        } else {
+            let item5 = arrayOfItems.slice(4,5).toString().toUpperCase();
+            arrayOfItems.splice(4,1,item5);
+            return modifyArray = arrayOfItems;
+        }
+    }
+    console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']));
+    // console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft', 'IBM']));
+    // console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon']));
+
+
