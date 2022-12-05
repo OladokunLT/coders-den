@@ -132,10 +132,14 @@
 // 1. Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
 // I don't know how to solve this question
 
-// 2. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
-// const solveQuadEquation = () =>{
 
-// }
+// 2. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
+    // const solveQuadEquation = (a, b, c) =>{
+    //     let result1 = (-b + Math.sqrt(Math.pow(b,2)-4*a*c))/2*a;
+    //     let result2 = (-b - Math.sqrt(Math.pow(b,2)-4*a*c))/2*a;
+    //     return `${result1} , ${result2}`
+    // }
+    // console.log(solveQuadEquation(1, -5, 6));
 
 // 3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
     // const printArray = (...array) => {
