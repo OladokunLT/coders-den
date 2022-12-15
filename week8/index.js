@@ -71,35 +71,7 @@ dog.getDogInfo = function(){
       },
     ];
 
-    const products = [
-      {
-        _id: "eedfcf",
-        name: "mobile phone",
-        description: "Huawei Honor",
-        price: 200,
-        ratings: [
-          { userId: "fg12cy", rate: 5 },
-          { userId: "zwf8md", rate: 4.5 },
-        ],
-        likes: [],
-      },
-      {
-        _id: "aegfal",
-        name: "Laptop",
-        description: "MacPro: System Darwin",
-        price: 2500,
-        ratings: [],
-        likes: ["fg12cy"],
-      },
-      {
-        _id: "hedfcg",
-        name: "TV",
-        description: "Smart TV:Procaster",
-        price: 400,
-        ratings: [{ userId: "fg12cy", rate: 5 }],
-        likes: ["fg12cy"],
-      },
-    ];
+    
     // console.table(users);
     // console.table(products)
 
@@ -128,7 +100,7 @@ const personAccount = {
 }
 // **** Questions:2, 3 and 4 are based on the following two arrays:users and products ()
 /*
-    const users = [
+  const users = [
     {
         _id: 'ab12ex',
         username: 'Alex',
@@ -169,9 +141,65 @@ const personAccount = {
         createdAt:'08/01/2020 10:00 AM',
         isLoggedIn: false
     }
-    ];
+  ];
+ */
+// 2. Imagine you are getting the above users collection from a MongoDB database. 
+//      2a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
+function signUp (obj){
+  let regEmails = [], isRegistered = "You are now registered";
+  for(let i=0; i<users.length; i++){
+    regEmails.push(users[i].email)
+  }
+  if (regEmails.includes(obj.email)) isRegistered = 'email is already registered. Click SignIn button to login';
+  else users.push(obj);
+  return isRegistered;
+}
+// console.log(
+//   signUp({
+//     _id: "iedeo2", 
+//     username: 'Tijani', 
+//     email: 'tj@tj.com',
+//     password: '123321', 
+//     createdAt: '15/12/2022 15:14 PM', 
+//     isLoggedIn: false,
+//   })
+// );
 
-    const products = [
+// console.log( 
+//   signUp({_id:'fef83e', username:'Lukman', email:'lukpay@gmail.com', password:'$stEnsie4',
+//   createdAt:`${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getSeconds()} AM`,
+//   isLoggedIn:true,})
+// )
+// console.table(users);
+
+//      2b. Create a function called signIn which allows user to sign in to the application
+  /** Steps:
+   *  collected user email and password
+   *  check if user email matches any of exist emails
+   *  if no return 'You are not registered, pls signUp first'
+   *  if email is found, check if email matches password provided.
+   *  if no return 'password is not correct'
+   *  if yes return 'Welcome "username" you are logged in'
+   */
+
+function signIn(email, password) {
+  let status ="Email not found"; 
+  let userObj = { userEmail: email, userPassword: password, }
+  for (let i=0; i<users.length; i++) {
+    if (users[i].email === userObj.userEmail)
+      if(users[i].password === userObj.userPassword)  status = `Welcome ${users[i].username}, you are logged in successfully.`; 
+      else status = "signIn failed! incorrect password";
+  }
+  return status;
+}
+// console.log(signIn('asab@asab.com', '123456'));
+// console.log(signIn('martha@martha.com', '123222'));
+// console.log(signIn('martha@martha.com', '23222'));
+// console.log(signIn('martha@martha.', '123222'));
+// console.log(signIn('thomas@thomas.com', '123333'));
+
+
+const products = [
   {
     _id: 'eedfcf',
     name: 'mobile phone',
@@ -200,49 +228,23 @@ const personAccount = {
     likes: ['fg12cy']
   }
 ]
- */
-// 2. Imagine you are getting the above users collection from a MongoDB database. 
-//      2a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
-function signUp(_id, username, email, password, createdAt, isLoggedIn) {
-  obj = {
-    _id: _id, 
-    username: username, 
-    email: email, 
-    password: password, 
-    createdAt: createdAt, 
-    isLoggedIn: isLoggedIn,
-  }
-
-  let regEmails = [];
-  for(let i=0; i<users.length; i++){
-    // console.log( users[i].email );
-    regEmails.push(users[i].email)
-  }
-  // console.log(regEmails);
-  if (regEmails.includes(obj.email)){
-    return('email is already registered. Click signin button to login')
-  }else 
-  users.push(obj);
-  return `You are now registered`  
-}
-console.log(
-  signUp(    'fef83e', 'Lukman', 'lukpay@gmail.com', '$stEnsie4',
-    `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getSeconds()} AM`,
-    true,
-  )
-);
-
-console.log( 
-  signUp('fef83e', 'Lukman', 'lukpay@gmail.com', '$stEnsie4',
-  `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getSeconds()} AM`,
-  true,)
-)
+console.table(products)
 console.table(users);
-
-//      2b. Create a function called signIn which allows user to sign in to the application
-
+console.log(products)
 // 3. The products array has three elements and each of them has six properties. 
 //      3a. Create a function called rateProduct which rates the product 
+function rateProduct(obj, productName) {
+  let isRated = 'Product rating Unsuccessful'
+  for (const item of products) {  
+    if(item.name === productName) {
+      products[item.ratings.push(obj)]
+      isRated = 'Product rated successfully.'
+    }
+  }
+  return isRated
+}
+console.log(rateProduct({userId: 'ab12ex', rate: 3}, 'Laptop' ));
+console.log((products));
 //      3b. Create a function called averageRating which calculate the average rating of a product
 
 // 4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
