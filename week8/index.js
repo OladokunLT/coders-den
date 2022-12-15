@@ -244,7 +244,32 @@ function rateProduct(obj, productName) {
   return isRated
 }
 console.log(rateProduct({userId: 'ab12ex', rate: 3}, 'Laptop' ));
-console.log((products));
+console.log(rateProduct({userId: 'ab12ex', rate: 3.8}, 'TV' ));
+
+
 //      3b. Create a function called averageRating which calculate the average rating of a product
+// function averageRating () {
+//   let total
+//   console.log(products.length)
+//   for (let index = 0; index < products.length; index++) {
+//     const element = products[index].ratings[0].rate;
+//     console.log(element)
+//   }
+// }
+// console.log(averageRating())
 
 // 4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+//steps: 1. collect projectNameObj and UserId. -2. match existence. -3. check if id is absent in likes array if presence then push id, else shift 
+function likeProduct (obj, id){
+  for(let i=0; i<products.length; i++) {
+    console.log(products[i].likes)
+    console.log(products[i].name)
+    if(products[i].name === obj.name  ) {
+      console.log('yes')
+      products[i].likes.push(id);
+      console.log(`'${id}' is added to like array`)
+    }
+  }
+}
+console.log(likeProduct({name: 'Laptop'}, 'abcdef'))
+console.log((products));
