@@ -154,22 +154,22 @@ function signUp (obj){
   else users.push(obj);
   return isRegistered;
 }
-// console.log(
-//   signUp({
-//     _id: "iedeo2", 
-//     username: 'Tijani', 
-//     email: 'tj@tj.com',
-//     password: '123321', 
-//     createdAt: '15/12/2022 15:14 PM', 
-//     isLoggedIn: false,
-//   })
-// );
+console.log(
+  signUp({
+    _id: "iedeo2", 
+    username: 'Tijani', 
+    email: 'tj@tj.com',
+    password: '123321', 
+    createdAt: '15/12/2022 15:14 PM', 
+    isLoggedIn: false,
+  })
+);
 
-// console.log( 
-//   signUp({_id:'fef83e', username:'Lukman', email:'lukpay@gmail.com', password:'$stEnsie4',
-//   createdAt:`${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getSeconds()} AM`,
-//   isLoggedIn:true,})
-// )
+console.log( 
+  signUp({_id:'fef83e', username:'Lukman', email:'lukpay@gmail.com', password:'$stEnsie4',
+  createdAt:`${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getSeconds()} AM`,
+  isLoggedIn:true,})
+)
 // console.table(users);
 
 //      2b. Create a function called signIn which allows user to sign in to the application
@@ -192,11 +192,11 @@ function signIn(email, password) {
   }
   return status;
 }
-// console.log(signIn('asab@asab.com', '123456'));
-// console.log(signIn('martha@martha.com', '123222'));
-// console.log(signIn('martha@martha.com', '23222'));
-// console.log(signIn('martha@martha.', '123222'));
-// console.log(signIn('thomas@thomas.com', '123333'));
+console.log(signIn('asab@asab.com', '123456'));
+console.log(signIn('martha@martha.com', '123222'));
+console.log(signIn('martha@martha.com', '23222'));
+console.log(signIn('martha@martha.', '123222'));
+console.log(signIn('thomas@thomas.com', '123333'));
 
 
 const products = [
@@ -228,9 +228,7 @@ const products = [
     likes: ['fg12cy']
   }
 ]
-console.table(products)
-console.table(users);
-console.log(products)
+
 // 3. The products array has three elements and each of them has six properties. 
 //      3a. Create a function called rateProduct which rates the product 
 function rateProduct(obj, productName) {
@@ -244,32 +242,53 @@ function rateProduct(obj, productName) {
   return isRated
 }
 console.log(rateProduct({userId: 'ab12ex', rate: 3}, 'Laptop' ));
+console.log(rateProduct({userId: 'ab12ex', rate: 3.5}, 'Laptop' ));
 console.log(rateProduct({userId: 'ab12ex', rate: 3.8}, 'TV' ));
+console.log(rateProduct({userId: 'ab12ex', rate: 3.8}, 'mobile phone' ));
+console.log(rateProduct({userId: 'ab12ex', rate: 2.5}, 'mobile phone' ));
 
 
 //      3b. Create a function called averageRating which calculate the average rating of a product
-// function averageRating () {
-//   let total
-//   console.log(products.length)
-//   for (let index = 0; index < products.length; index++) {
-//     const element = products[index].ratings[0].rate;
-//     console.log(element)
-//   }
-// }
-// console.log(averageRating())
-
-// 4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
-//steps: 1. collect projectNameObj and UserId. -2. match existence. -3. check if id is absent in likes array if presence then push id, else shift 
-function likeProduct (obj, id){
-  for(let i=0; i<products.length; i++) {
-    console.log(products[i].likes)
-    console.log(products[i].name)
-    if(products[i].name === obj.name  ) {
-      console.log('yes')
-      products[i].likes.push(id);
-      console.log(`'${id}' is added to like array`)
+  // solutionSteps: 1. collect product name; loop through the ratings of that product and add up all ratings
+function averageRating (obj) {
+  let total = 0, rateCount = 0;
+  for (let i = 0; i < products.length; i++) {
+    if(products[i].name === obj.name) {
+      for(j=0; j < products[i].ratings.length; j++){
+        total += products[i].ratings[j].rate;
+        rateCount = products[i].ratings.length;
+      }
     }
   }
+  let averageRating = total / rateCount
+  return averageRating.toPrecision(2)
 }
-console.log(likeProduct({name: 'Laptop'}, 'abcdef'))
-console.log((products));
+console.log(averageRating({name: 'mobile phone'}))
+console.log(averageRating({name: 'TV'}))
+console.log(averageRating({name: 'Laptop'}))
+
+function likeProduct (obj, id){
+  isProductNameExist = `Sorry! The product name (${obj.name}) you enter does not exist`;
+  for(let i=0; i<products.length; i++){ 
+    if(products[i].name === obj.name  ) {
+      console.log( `You are about to like this Product (${obj.name})` );
+      if (products[i].likes.includes(id)){
+        let indexOfId = products[i].likes.indexOf(id);
+        products[i].likes.splice(indexOfId, 1);
+        isProductNameExist = `You have unliked this Product (${obj.name})`;
+      } else {
+        products[i].likes.unshift(id);
+        isProductNameExist = `You have liked this Product (${obj.name})`;
+      }      
+    }
+  }
+  return isProductNameExist;
+}
+console.log(likeProduct({name: 'Laptop'}, 'abcdef'));
+console.log(likeProduct({name: 'Laptop'}, 'abcdef'));
+console.log(likeProduct({name: 'Laptop'}, 'abcdef'));
+console.log(likeProduct({name: 'mobile phone'}, 'abcdef'));
+
+
+console.table(products)
+console.table(users);
