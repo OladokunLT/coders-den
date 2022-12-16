@@ -267,6 +267,8 @@ console.log(averageRating({name: 'mobile phone'}))
 console.log(averageRating({name: 'TV'}))
 console.log(averageRating({name: 'Laptop'}))
 
+
+// Create a function that likes a product and unlike a product if already liked.
 function likeProduct (obj, id){
   isProductNameExist = `Sorry! The product name (${obj.name}) you enter does not exist`;
   for(let i=0; i<products.length; i++){ 
