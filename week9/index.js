@@ -1,8 +1,8 @@
 // 💻 Exercises
 // Exercises: Level 1
 
-/*
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+
+const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
 const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const products = [
@@ -13,39 +13,124 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
-*/
 
 // 1. Explain the difference between forEach, map, filter, and reduce.
 // 2. Define a callback function before you use it in forEach, map, filter or reduce.
 // 3. Use forEach to console.log each country in the countries array.
+    // countries.forEach(country => {console.log(country)});
+
 // 4. Use forEach to console.log each name in the names array.
+    // names.forEach(name => { console.log(name) });
+
 // 5. Use forEach to console.log each number in the numbers array.
+    // numbers.forEach(num => { console.log(num) });
+
 // 6. Use map to create a new array by changing each country to uppercase in the countries array.
+    // const countriesToUpperCase = countries.map( country =>  country.toUpperCase() );
+    // console.log(countriesToUpperCase)
+
 // 7. Use map to create an array of countries length from countries array.
+    // const countryLength = countries.map( country => country.length )
+    // console.log(countryLength);
+
 // 8. Use map to create a new array by changing each number to square in the numbers array
+    // const squarNum = numbers.map(num =>num *num)
+    // console.log(squarNum);
+    
 // 9. Use map to change to each name to uppercase in the names array
-// 10. Use map to map the products array to its corresponding prices.
+    // namesToLowerCase = names.map(name => name.toLowerCase())
+    // console.log(namesToLowerCase)
+
+// 10. Use map to map the products array to its corresponding prices
+    // const productPrice = products.map(product =>  product.price  )
+    // console.log(productPrice)
+
 // 11. Use filter to filter out countries containing land.
+    // const countriesThatContainLand = countries.filter(country => country.includes('land')) 
+    // console.log(countriesThatContainLand);
+
 // 12. Use filter to filter out countries having six character.
+    // const countryHas6Char = countries.filter( country => {return country.length === 6});
+    // console.log(countryHas6Char);
+
 // 13. Use filter to filter out countries containing six letters and more in the country array.
+    // const countryHasAtLeast6Char = countries.filter( country => {return country.length >= 6});
+    // console.log(countryHasAtLeast6Char);
+
 // 14. Use filter to filter out country start with 'E';
+    // const countryStartWithCharE = countries.filter( country => country.startsWith('E'))
+    // console.log(countryStartWithCharE);
+
 // 15. Use filter to filter out only prices with values.
+    // const pricesWithValue = products.filter((item)=> {
+    //     if(typeof item.price === "number") return item
+    // })
+    // console.log(pricesWithValue)
+
 // 16. Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+    // arr = ['Bright', 'Monday', 'morning']
+    // const getStringLists = arr.map( string => {return string})
+    // console.log(getStringLists)
+
+// function getStrings () {
+//     let empty = []
+//     arr = ['Bright', 'Monday', 'morning'];
+//     arr.map( (string) => { empty.push(string)})
+//     return empty
+// }
+// console.log(getStrings())
+
 // 17. Use reduce to sum all the numbers in the numbers array.
-// 18. Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+    // const sum = numbers.reduce((acc, cur) => {return acc + cur}, 0)
+    // console.log(sum);
+    
+// 18. Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
+    function concatCountries (countries){
+        let minusLastCountry = countries.slice (0, -1);
+        let lastCountry = countries.slice(-1);
+        let concat = minusLastCountry.reduce((all, item) => {return all + item + ', '}, "");
+        let statement =  `${concat} and ${lastCountry[0]} are north European countries.`;
+
+        return statement;
+    }
+    console.log(concatCountries(countries));
+
 // 19. Explain the difference between some and every
 // 20. Use some to check if some names' length greater than seven in names array
-// 21. Use every to check if all the countries contain the word land
-// 22. Explain the difference between find and findIndex.
-// 23. Use find to find the first country containing only six letters in the countries array
-// 24. Use findIndex to find the position of the first country containing only six letters in the countries array
-// 25. Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-// 26. Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const greater7 = names.some(name => name.length > 7);
+console.log(greater7);
 
+// 21. Use every to check if all the countries contain the word land
+const checkAllCountryContainLand = countries.every(country => country.includes('land'))
+console.log(checkAllCountryContainLand)
+
+
+// 22. Explain the difference between find and findIndex.
+    //find returns the first value if true while findIndex returns position if true.
+
+// 23. Use find to find the first country containing only six letters in the countries array
+    const first6CharCountry = countries.find(country => country.length === 6);
+    console.log(first6CharCountry);
+
+// 24. Use findIndex to find the position of the first country containing only six letters in the countries array
+    const first6CharCountryPosition = countries.findIndex(country => country.length === 6);
+    console.log(first6CharCountryPosition);
+
+// 25. Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+    const positionOfNorway = countries.findIndex(country=> country.includes('Norway'));
+    console.log(positionOfNorway)
+
+// 26. Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+    const positionOfRussia = countries.findIndex(country=> country === 'Russia');
+    console.log(positionOfRussia)
 
 // Exercises: Level 2
 // 1. Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+    const totalPrice = products.filter((item)=> typeof item.price === 'number').reduce((total, each) => total + each.price, 0);
+    console.log(totalPrice);
+
 // 2. Find the sum of price of products using only reduce reduce(callback))
+    
 // 3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
 // 4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 // 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
