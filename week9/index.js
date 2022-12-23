@@ -1,6 +1,18 @@
 // 💻 Exercises
 // Exercises: Level 1
-
+const nations = [
+    'Albania',
+    'Bolivia',
+    'Canada',
+    'Denmark',
+    'Ethiopia',
+    'Finland',
+    'Germany',
+    'Hungary',
+    'Ireland',
+    'Japan',
+    'Kenya'
+  ]
 
 const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
 const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
@@ -85,53 +97,57 @@ const products = [
     // console.log(sum);
     
 // 18. Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
-    function concatCountries (countries){
-        let minusLastCountry = countries.slice (0, -1);
-        let lastCountry = countries.slice(-1);
-        let concat = minusLastCountry.reduce((all, item) => {return all + item + ', '}, "");
-        let statement =  `${concat} and ${lastCountry[0]} are north European countries.`;
+    // function concatCountries (countries){
+    //     let minusLastCountry = countries.slice (0, -1);
+    //     let lastCountry = countries.slice(-1);
+    //     let concat = minusLastCountry.reduce((all, item) => {return all + item + ', '}, "");
+    //     let statement =  `${concat} and ${lastCountry[0]} are north European countries.`;
 
-        return statement;
-    }
-    console.log(concatCountries(countries));
+    //     return statement;
+    // }
+    // console.log(concatCountries(countries));
 
 // 19. Explain the difference between some and every
+
 // 20. Use some to check if some names' length greater than seven in names array
-const greater7 = names.some(name => name.length > 7);
-console.log(greater7);
+    // const greater7 = names.some(name => name.length > 7);
+    // console.log(greater7);
 
 // 21. Use every to check if all the countries contain the word land
-const checkAllCountryContainLand = countries.every(country => country.includes('land'))
-console.log(checkAllCountryContainLand)
+    // const checkAllCountryContainLand = countries.every(country => country.includes('land'))
+    // console.log(checkAllCountryContainLand)
 
 
 // 22. Explain the difference between find and findIndex.
     //find returns the first value if true while findIndex returns position if true.
 
 // 23. Use find to find the first country containing only six letters in the countries array
-    const first6CharCountry = countries.find(country => country.length === 6);
-    console.log(first6CharCountry);
+    // const first6CharCountry = countries.find(country => country.length === 6);
+    // console.log(first6CharCountry);
 
 // 24. Use findIndex to find the position of the first country containing only six letters in the countries array
-    const first6CharCountryPosition = countries.findIndex(country => country.length === 6);
-    console.log(first6CharCountryPosition);
+    // const first6CharCountryPosition = countries.findIndex(country => country.length === 6);
+    // console.log(first6CharCountryPosition);
 
 // 25. Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
-    const positionOfNorway = countries.findIndex(country=> country.includes('Norway'));
-    console.log(positionOfNorway)
+    // const positionOfNorway = countries.findIndex(country=> country.includes('Norway'));
+    // console.log(positionOfNorway)
 
 // 26. Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
-    const positionOfRussia = countries.findIndex(country=> country === 'Russia');
-    console.log(positionOfRussia)
+    // const positionOfRussia = countries.findIndex(country=> country === 'Russia');
+    // console.log(positionOfRussia)
 
 // Exercises: Level 2
+
 // 1. Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
-    const totalPrice = products.filter((item)=> typeof item.price === 'number').reduce((total, each) => total + each.price, 0);
-    console.log(totalPrice);
+    // const totalPrice = products.filter((item)=> typeof item.price === 'number').reduce((total, each) => total + each.price, 0);
+    // console.log(totalPrice);
 
 // 2. Find the sum of price of products using only reduce reduce(callback))
-    
+
 // 3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+
+
 // 4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
 // 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 // 6. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
