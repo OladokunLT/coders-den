@@ -144,11 +144,47 @@ const products = [
     // console.log(totalPrice);
 
 // 2. Find the sum of price of products using only reduce reduce(callback))
+    // const totalPrice = products.reduce((sum, each) => {return typeof each.price ==='number' ? sum + each.price : sum},0)
+    // console.log(totalPrice);
 
 // 3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
-
+// countries.js(eg 'land', 'ia', 'island','stan'));
+// function categorizeCountries() {
+//     // console.log(nations)
+//     let answer = []
+//     const cat1 = nations.filter(country => country.includes('land'))
+//     const cat2 = nations.filter(country => country.includes('ia'));
+//     const cat3 = nations.filter(country => country.includes()) // I still need to get other countries.
+//     answer.push(cat1, cat2, cat3)
+//     return (answer)
+// }
+// console.log(categorizeCountries())
 
 // 4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+
+/*  
+  function countInitials (obj) {
+    let count = 0, curChar, pos, preChar = "";
+    let res = {}, arr =[];
+    let letters = obj.map(x => x.name[0]);
+    for(i = 0; i<letters.length; i++){
+      curChar = letters[i];
+      pos = letters.indexOf(curChar);
+      if (curChar === preChar) continue;
+      while(pos!==-1){
+        count++;
+        pos = letters.indexOf(curChar, pos +1);
+        res[curChar] = count;
+      }
+    count = 0;
+    preChar = curChar;
+    }
+    return res;
+  }
+  
+  console.log(countInitials(countries));
+*/
+
 // 5. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
 // 6. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 // 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
@@ -181,7 +217,7 @@ const products = [
     {country: 'French',count: 45},
     {country: 'Arabic',count: 25},
     ]```
- */
+*/
 
 
 // 3. *** Use countries_data.js file create a function which create the ten most populated countries
@@ -202,6 +238,7 @@ const products = [
     ]
 
     console.log(mostPopulatedCountries(countries, 3))
+    
     [
     {country: 'China', population: 1377422166},
     {country: 'India', population: 1295210000},
@@ -244,3 +281,4 @@ console.log(statistics.describe())
     Standard Deviation:  4.2
     Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
  */
+
