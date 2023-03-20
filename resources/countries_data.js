@@ -2070,5 +2070,3 @@ function allPrimeLessThan(n) {
 }
 console.log( allPrimeLessThan(37) )
 */
-
-
